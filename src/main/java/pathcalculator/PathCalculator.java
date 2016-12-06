@@ -1,8 +1,10 @@
 package pathcalculator;
 
+import configuration.Configuration;
 import field.Field;
 import move.Move;
 import move.MoveType;
+import move.Path;
 
 import java.awt.*;
 import java.util.*;
@@ -13,76 +15,88 @@ import java.util.List;
  */
 public class PathCalculator {
 
-    private static List<List<MoveType>> solutions;
     private static Integer bestPathDistance;
-    private static Integer callsNumber;
-    private static Integer[][] visited;
 
     public static Move bestNextMove(Field field) {
-        List<List<MoveType>> moves = new ArrayList<>();
+        List<Path> paths = new ArrayList<>();
         if (!field.getWeaponPositions().isEmpty()) {
             for (Point point : field.getWeaponPositions()) {
-                moves.add(calculateShortestPath(field, field.getMyPosition(), point));
+                paths.add(calculateShortestPath(field, field.getMyPosition(), point, null));
+            }
+            for (Point point : field.getSnippetPositions()) {
+                paths.add(calculateShortestPath(field, field.getMyPosition(), point, Configuration.MAX_DISTANCE_IF_SWORD.getValue()));
             }
         } else {
             for (Point point : field.getSnippetPositions()) {
-                moves.add(calculateShortestPath(field, field.getMyPosition(), point));
+                paths.add(calculateShortestPath(field, field.getMyPosition(), point, null));
             }
         }
 
-        if (moves.isEmpty()) {
+        if (paths.isEmpty()) {
             return new Move();
         }
-        return new Move(chooseBestMove(moves));
+        return new Move(chooseBestMove(paths, field));
     }
 
-    public static MoveType chooseBestMove(List<List<MoveType>> moves) {
-        moves.sort(new Comparator<List<MoveType>>() {
+    public static MoveType chooseBestMove(List<Path> paths, Field field) {
+        paths.sort(new Comparator<Path>() {
             @Override
-            public int compare(List<MoveType> o1, List<MoveType> o2) {
-                return o1.size() - o2.size();
+            public int compare(Path o1, Path o2) {
+                return o1.getDistance() - o2.getDistance();
             }
         });
-        return moves.get(0).get(0);
+
+        Path bestPath = null;
+
+        // Am I closer to some point?
+        for (Path path : paths) {
+            Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance());
+            if (opponentPath == null) {
+                bestPath = path;
+                break;
+            }
+        }
+
+        // Not closer, go to the closest
+        if (bestPath == null) {
+            bestPath = paths.get(0);
+        }
+
+        return bestPath.getMoves().get(0);
     }
 
-    public static List<MoveType> calculateShortestPath(Field field, Point start, Point end) {
+    public static Path calculateShortestPath(Field field, Point start, Point end, Integer maxDistance) {
         init(field);
-        calculateMinimumDistanceAux(field, start, end, new ArrayList<MoveType>());
+        Integer[][] visited = initMatrix(field.getWidth(), field.getHeight());
+        List<Path> solutions = new ArrayList<>();
+        calculateMinimumDistanceAux(field, start, start, end, new ArrayList<MoveType>(), solutions, maxDistance, visited);
         //System.out.println(callsNumber);
-        return getBestSolution();
+        return getBestSolution(solutions);
     }
 
     private static void init(Field field) {
-        solutions = new ArrayList<>();
         bestPathDistance = -1;
-        callsNumber = 0;
-        visited = initMatrix(field.getWidth(), field.getHeight());
     }
 
-    private static void calculateMinimumDistanceAux(Field field, Point actual, Point end, List<MoveType> moves) {
-        callsNumber ++;
+    private static void calculateMinimumDistanceAux(Field field, Point start, Point actual, Point end, List<MoveType> moves, List<Path> solutions, Integer maxDistance, Integer[][] visited) {
         // Path found
         if (actual.equals(end)) {
             //System.out.println("Path found distance " + moves.size() + " moves: " + moves);
-            solutions.add(moves);
-            if (moves.contains(MoveType.PASS)) {
-                bestPathDistance = moves.size() * 2;
-            } else {
-                bestPathDistance = moves.size();
-            }
-            return;
+            solutions.add(new Path(start, end, moves));
+            bestPathDistance = moves.size();
+            return ;
         }
 
-        // There is a better path
+        // There is a better path or too long
         if (visited[actual.x][actual.y] < moves.size()
-            || (bestPathDistance != -1 && bestPathDistance < moves.size())) {
+                || (maxDistance != null && maxDistance < moves.size())
+                || (bestPathDistance != -1 && bestPathDistance < moves.size())) {
             return;
         }
 
         if (field.getField()[actual.x][actual.y].equals(Field.BUG)) {
             // Penalty
-            moves.add(MoveType.PASS);
+            return;
         }
 
         visited[actual.x][actual.y] = moves.size();
@@ -93,7 +107,7 @@ public class PathCalculator {
             if (canGoInDirection(field, actual, move)) {
                 List<MoveType> newMoves = new ArrayList<>(moves);
                 newMoves.add(move);
-                calculateMinimumDistanceAux(field, move(actual, move), end, newMoves);
+                calculateMinimumDistanceAux(field, start, move(actual, move), end, newMoves, solutions, maxDistance, visited);
             }
         }
     }
@@ -151,16 +165,12 @@ public class PathCalculator {
         return visited;
     }
 
-    private static List<MoveType> getBestSolution() {
-        solutions.sort(new Comparator<List<MoveType>>() {
+    private static Path getBestSolution(List<Path> solutions) {
+        if (solutions.isEmpty()) return null;
+        solutions.sort(new Comparator<Path>() {
             @Override
-            public int compare(List<MoveType> o1, List<MoveType> o2) {
-                if (o1.contains(MoveType.PASS) && !o2.contains(MoveType.PASS)) {
-                    return 1;
-                } else if (o2.contains(MoveType.PASS) && !o1.contains(MoveType.PASS)) {
-                    return -1;
-                }
-                return o1.size() - o2.size();
+            public int compare(Path o1, Path o2) {
+                return o1.getDistance() - o2.getDistance();
             }
         });
         return solutions.get(0);

@@ -2,8 +2,8 @@ package pathcalculator;
 
 import field.Field;
 import move.MoveType;
+import move.Path;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -17,22 +17,6 @@ import java.util.List;
 public class PathCalculatorTest {
     public static Field field;
 
-    public static final String[][] FIELD = new String[][]{
-            {".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","."},
-            {".","x","x","x","x","x",".","x","x","x","x","x","x",".","x","x","x","x","x","."},
-            {".","x",".",".",".",".",".","x","x","x","x","x","x",".",".",".",".",".","x","."},
-            {".","x",".","x","x","x",".",".",".","x","x",".",".",".","x","x","x",".","x","."},
-            {".",".",".",".",".","x","x","x",".","x","x",".","x","x","x",".",".",".",".","."},
-            {".","x","x","x",".","x",".",".",".",".",".",".",".",".","x",".","x","x","x","."},
-            {".",".",".","x",".","x",".","x","x","x","x","x","x",".","x",".","x",".",".","."},
-            {"x","x",".","x",".",".",".","x","x","x","x","x","x",".",".",".","x",".","x","x"},
-            {".",".",".","x","x","x",".","x","x","x","x","x","x",".","x","x","x",".",".","."},
-            {".","x",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".",".","x","."},
-            {".","x","x","x",".","x","x","x","x","x","x","x","x","x","x",".","x","x","x","."},
-            {".","x","x","x",".",".",".",".",".",".",".",".",".",".",".",".","x","x","x","."},
-            {".","x","x","x",".","x","x","x",".","x","x",".","x","x","x",".","x","x","x","."},
-            {".",".",".",".",".",".",".",".",".","x","x",".",".",".",".",".",".",".",".","."}};
-
     @BeforeClass
     public static void init() throws Exception {
         field = new Field();
@@ -45,36 +29,41 @@ public class PathCalculatorTest {
     }
 
     @Test
-    public void testMinimunDistance() throws Exception {
-        int distance = PathCalculator.calculateShortestPath(field, new Point(5, 0), new Point(17, 0)).size();
+    public void testMinimumDistance() throws Exception {
+        Path path = PathCalculator.calculateShortestPath(field, new Point(5, 0), new Point(17, 0), null);
+        int distance = path.getDistance();
         Assert.assertSame(12, distance);
     }
 
     @Test
-    public void testMinimunDistance2() throws Exception {
-        int distance = PathCalculator.calculateShortestPath(field, new Point(0, 5), new Point(17, 3)).size();
+    public void testMinimumDistance2() throws Exception {
+        Path path = PathCalculator.calculateShortestPath(field, new Point(0, 5), new Point(17, 3), null);
+        int distance = path.getDistance();
         Assert.assertSame(25, distance);
     }
 
     @Test
-    public void testMinimunDistance3() throws Exception {
-        int distance = PathCalculator.calculateShortestPath(field, new Point(2, 8), new Point(17, 3)).size();
+    public void testMinimumDistance3() throws Exception {
+        Path path = PathCalculator.calculateShortestPath(field, new Point(2, 8), new Point(17, 3), null);
+        int distance = path.getDistance();
         Assert.assertSame(22, distance);
     }
 
     @Test
     public void testChooseBestMove() throws Exception {
-        List<List<MoveType>> moves = new ArrayList<>();
+        Point start = new Point(0, 5);
+        Point end = new Point(0, 1);
+        List<Path> paths = new ArrayList<>();
         java.util.List<MoveType> moves1 = new ArrayList<>();
         moves1.add(MoveType.UP);
-        moves.add(moves1);
+        paths.add(new Path(start, end, moves1));
 
         java.util.List<MoveType> moves2 = new ArrayList<>();
         moves2.add(MoveType.DOWN);
         moves2.add(MoveType.RIGHT);
-        moves.add(moves2);
+        paths.add(new Path(start, end, moves2));
 
-        MoveType bestMove = PathCalculator.chooseBestMove(moves);
+        MoveType bestMove = PathCalculator.chooseBestMove(paths, field);
         Assert.assertSame(MoveType.UP, bestMove);
     }
 
