@@ -23,7 +23,7 @@ public class PathCalculator {
             for (Point point : field.getWeaponPositions()) {
                 Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
                 Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null);
-                if (path.getDistance() < opponentPath.getDistance()) {
+                if (path != null || opponentPath == null || path.getDistance() < opponentPath.getDistance()) {
                     paths.add(path);
                 }
             }
@@ -42,14 +42,25 @@ public class PathCalculator {
                 }
             }
             for (Point point : field.getWeaponPositions()) {
-                paths.add(calculateShortestPath(field, field.getMyPosition(), point, null));
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
+                if (path != null) {
+                    paths.add(path);
+                }
             }
         }
 
         if (paths.isEmpty()) {
             Path path1 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION, null);
             Path path2 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION2, null);
-            return (path1.getDistance() < path2.getDistance()) ? new Move(path1.getMoves().get(0)) : new Move(path2.getMoves().get(0));
+            if (path1 != null && path2 != null) {
+                return (path1.getDistance() < path2.getDistance()) ? new Move(path1.getMoves().get(0)) : new Move(path2.getMoves().get(0));
+            } else if (path1 == null) {
+                return new Move(path2.getMoves().get(0));
+            } else if (path2 == null) {
+                return new Move(path1.getMoves().get(0));
+            } else {
+                return new Move();
+            }
         }
         return new Move(chooseBestMove(paths, field));
     }
