@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="5" failures="0" name="pathcalculator.PathCalculatorTest" time="0.231" errors="0" skipped="0">
+<testsuite tests="5" failures="0" name="pathcalculator.PathCalculatorTest" time="0.284" errors="0" skipped="0">
   <properties>
     <property name="idea.version" value="15.0.1"/>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
@@ -68,6 +68,6 @@
   <testcase classname="pathcalculator.PathCalculatorTest" name="testChooseBestMove" time="0.008"/>
   <testcase classname="pathcalculator.PathCalculatorTest" name="testMinimumDistance" time="0"/>
   <testcase classname="pathcalculator.PathCalculatorTest" name="testCanGoDirection" time="0"/>
-  <testcase classname="pathcalculator.PathCalculatorTest" name="testMinimumDistance2" time="0.015"/>
-  <testcase classname="pathcalculator.PathCalculatorTest" name="testMinimumDistance3" time="0.01"/>
+  <testcase classname="pathcalculator.PathCalculatorTest" name="testMinimumDistance2" time="0.016"/>
+  <testcase classname="pathcalculator.PathCalculatorTest" name="testMinimumDistance3" time="0.014"/>
 </testsuite>

@@ -37,6 +37,9 @@ public class Field {
     public static final String CHARACTER = "C";
     public static final String BUG = "E";
 
+    public static final Point BEST_POSITION = new Point(5,9);
+    public static final Point BEST_POSITION2 = new Point(14,9);
+
     private String myId;
     private String opponentId;
     private int width;
@@ -170,7 +173,8 @@ public class Field {
         int y = p.y;
 
         return x >= 0 && x < this.width && y >= 0 && y < this.height &&
-                !this.field[x][y].equals("x");
+                !this.field[x][y].equals("x") &&
+                !this.field[x][y].contains(BUG);
     }
 
     public void setMyId(int id) {

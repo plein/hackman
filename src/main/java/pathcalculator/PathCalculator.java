@@ -17,17 +17,19 @@ public class PathCalculator {
 
     private static Integer bestPathDistance;
 
-    public static Move bestNextMove(Field field) {
+    public static Move bestNextMove(Field field, boolean hasWeapon) {
         List<Path> paths = new ArrayList<>();
-        if (!field.getWeaponPositions().isEmpty()) {
+        if (!hasWeapon && !field.getWeaponPositions().isEmpty()) {
             for (Point point : field.getWeaponPositions()) {
                 Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
-                if (path != null) {
+                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null);
+                if (path.getDistance() < opponentPath.getDistance()) {
                     paths.add(path);
                 }
             }
             for (Point point : field.getSnippetPositions()) {
-                Path path = calculateShortestPath(field, field.getMyPosition(), point, Configuration.MAX_DISTANCE_IF_SWORD.getValue());
+                Integer distance = (paths.isEmpty()) ? null : Configuration.MAX_DISTANCE_IF_SWORD.getValue();
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, distance);
                 if (path != null) {
                     paths.add(path);
                 }
@@ -39,10 +41,15 @@ public class PathCalculator {
                     paths.add(path);
                 }
             }
+            for (Point point : field.getWeaponPositions()) {
+                paths.add(calculateShortestPath(field, field.getMyPosition(), point, null));
+            }
         }
 
         if (paths.isEmpty()) {
-            return new Move();
+            Path path1 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION, null);
+            Path path2 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION2, null);
+            return (path1.getDistance() < path2.getDistance()) ? new Move(path1.getMoves().get(0)) : new Move(path2.getMoves().get(0));
         }
         return new Move(chooseBestMove(paths, field));
     }
