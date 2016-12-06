@@ -21,14 +21,23 @@ public class PathCalculator {
         List<Path> paths = new ArrayList<>();
         if (!field.getWeaponPositions().isEmpty()) {
             for (Point point : field.getWeaponPositions()) {
-                paths.add(calculateShortestPath(field, field.getMyPosition(), point, null));
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
+                if (path != null) {
+                    paths.add(path);
+                }
             }
             for (Point point : field.getSnippetPositions()) {
-                paths.add(calculateShortestPath(field, field.getMyPosition(), point, Configuration.MAX_DISTANCE_IF_SWORD.getValue()));
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, Configuration.MAX_DISTANCE_IF_SWORD.getValue());
+                if (path != null) {
+                    paths.add(path);
+                }
             }
         } else {
             for (Point point : field.getSnippetPositions()) {
-                paths.add(calculateShortestPath(field, field.getMyPosition(), point, null));
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
+                if (path != null) {
+                    paths.add(path);
+                }
             }
         }
 
@@ -46,36 +55,28 @@ public class PathCalculator {
             }
         });
 
-        Path bestPath = null;
+        Path bestPath = paths.get(0);
 
-        // Am I closer to some point?
-        for (Path path : paths) {
-            Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance());
-            if (opponentPath == null) {
-                bestPath = path;
-                break;
+        // Am I closer than opponent some point?
+        if (field.getOpponentPosition() != null) {
+            for (Path path : paths) {
+                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance());
+                if (opponentPath == null) {
+                    bestPath = path;
+                    break;
+                }
             }
         }
-
-        // Not closer, go to the closest
-        if (bestPath == null) {
-            bestPath = paths.get(0);
-        }
-
         return bestPath.getMoves().get(0);
     }
 
     public static Path calculateShortestPath(Field field, Point start, Point end, Integer maxDistance) {
-        init(field);
+        bestPathDistance = -1;
         Integer[][] visited = initMatrix(field.getWidth(), field.getHeight());
         List<Path> solutions = new ArrayList<>();
         calculateMinimumDistanceAux(field, start, start, end, new ArrayList<MoveType>(), solutions, maxDistance, visited);
         //System.out.println(callsNumber);
         return getBestSolution(solutions);
-    }
-
-    private static void init(Field field) {
-        bestPathDistance = -1;
     }
 
     private static void calculateMinimumDistanceAux(Field field, Point start, Point actual, Point end, List<MoveType> moves, List<Path> solutions, Integer maxDistance, Integer[][] visited) {
