@@ -59,13 +59,17 @@ public class PathCalculator {
 
         // Am I closer than opponent some point?
         if (field.getOpponentPosition() != null) {
+            int longerDistance = 0;
             for (Path path : paths){
                 Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance());
                 if (opponentPath == null || opponentPath.getDistance() > path.getDistance()) {
                     return path.getMoves().get(0);
                 }
+                if (longerDistance < opponentPath.getDistance()) {
+                    bestPath = path;
+                    longerDistance = opponentPath.getDistance();
+                }
             }
-            return paths.get(paths.size() - 1).getMoves().get(0);
         }
         return bestPath.getMoves().get(0);
     }

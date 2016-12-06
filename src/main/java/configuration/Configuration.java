@@ -5,7 +5,7 @@ package configuration;
  */
 public enum Configuration {
 
-    MAX_DISTANCE_IF_SWORD(3);
+    MAX_DISTANCE_IF_SWORD(5);
 
 
     private final int value;

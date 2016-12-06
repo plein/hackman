@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b22d5b3e-8688-478a-a109-66ef73efeab7" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/field/Element.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/target/classes/field/Element.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bot/BotParser.class" afterPath="$PROJECT_DIR$/target/classes/bot/BotParser.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/configuration/Configuration.class" afterPath="$PROJECT_DIR$/target/classes/configuration/Configuration.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$2.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hackman-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/hackman-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bot/BotParser.java" afterPath="$PROJECT_DIR$/src/main/java/bot/BotParser.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" afterPath="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-pathcalculator.PathCalculatorTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-pathcalculator.PathCalculatorTest.xml" />
@@ -37,17 +35,17 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PathCalculator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PathCalculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.22343324">
-              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#1553#1734#0" expanded="true" />
                 <element signature="e#1733#1734#0" expanded="true" />
-                <element signature="e#6505#6686#0" expanded="true" />
-                <element signature="e#6685#6686#0" expanded="true" />
+                <element signature="e#6662#6843#0" expanded="true" />
+                <element signature="e#6842#6843#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -154,11 +152,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BotStarter.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BotStarter.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotStarter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+            <state vertical-scroll-proportion="0.4305177">
+              <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -190,11 +188,11 @@
         <option value="$PROJECT_DIR$/src/main/java/pathcalculator/MinimunDistante.java" />
         <option value="$PROJECT_DIR$/src/main/java/field/Field.java" />
         <option value="$PROJECT_DIR$/src/main/java/configuration/Cnfiguration.java" />
-        <option value="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" />
         <option value="$PROJECT_DIR$/src/main/java/move/Path.java" />
         <option value="$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bot/BotStarter.java" />
         <option value="$PROJECT_DIR$/src/main/java/bot/BotParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/configuration/Configuration.java" />
         <option value="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" />
       </list>
     </option>
@@ -378,28 +376,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hackman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="hackman" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1167,7 +1143,7 @@
       <updated>1480626557705</updated>
       <workItem from="1480626561203" duration="29329000" />
       <workItem from="1481022105942" duration="34000" />
-      <workItem from="1481022195056" duration="12445000" />
+      <workItem from="1481022195056" duration="14908000" />
     </task>
     <servers />
   </component>
@@ -1204,7 +1180,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41808000" />
+    <option name="totallyTimeSpent" value="44271000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1261,8 +1237,20 @@
           <properties />
           <option name="timeStamp" value="39" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
+          <line>21</line>
+          <properties />
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
+          <line>60</line>
+          <properties />
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="40" />
+      <option name="time" value="44" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1272,17 +1260,9 @@
         <watch expression="field.getOpponentPosition()" />
       </configuration>
       <configuration name="Application">
-        <watch expression="field[i][j]" />
-        <watch expression="bestDirection(actual, end)" />
-        <watch expression="field.isPointValid(actual)" language="JAVA" custom="" />
-        <watch expression="field.getOpponentPosition()" />
-        <watch expression="field.getEnemyPositions()" />
-        <watch expression="field.getOpponentPosition()" language="JAVA" custom="" />
-        <watch expression="this.opponentId.charAt(0)" />
-        <watch expression="input.contains(&quot;2&quot;)" language="JAVA" custom="" />
-        <watch expression="2 - myId + 1" />
-        <watch expression="1 - myId" />
-        <watch expression="opponentPath == null || opponentPath.getDistance() &gt; path.getDistance()" />
+        <watch expression="field.getField()[actual.x][actual.y]" />
+        <watch expression="field.getField()[actual.x][actual.y].contains(Field.BUG)" />
+        <watch expression="opponentPath.getDistance()" />
       </configuration>
     </watches-manager>
   </component>
@@ -1299,8 +1279,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1553#1734#0" expanded="true" />
             <element signature="e#1733#1734#0" expanded="true" />
-            <element signature="e#6505#6686#0" expanded="true" />
-            <element signature="e#6685#6686#0" expanded="true" />
+            <element signature="e#6662#6843#0" expanded="true" />
+            <element signature="e#6842#6843#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1425,8 +1405,8 @@
             <element signature="imports" expanded="true" />
             <element signature="e#1553#1734#0" expanded="true" />
             <element signature="e#1733#1734#0" expanded="true" />
-            <element signature="e#6505#6686#0" expanded="true" />
-            <element signature="e#6685#6686#0" expanded="true" />
+            <element signature="e#6662#6843#0" expanded="true" />
+            <element signature="e#6842#6843#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1693,19 +1673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/configuration/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-          <folding>
-            <element signature="e#187#188#0" expanded="true" />
-            <element signature="e#221#222#0" expanded="true" />
-            <element signature="e#250#251#0" expanded="true" />
-            <element signature="e#278#279#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1778,25 +1745,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotStarter.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/configuration/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
-          <folding />
+          <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+          <folding>
+            <element signature="e#187#188#0" expanded="true" />
+            <element signature="e#221#222#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+            <element signature="e#278#279#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.22343324">
-          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#1553#1734#0" expanded="true" />
             <element signature="e#1733#1734#0" expanded="true" />
-            <element signature="e#6505#6686#0" expanded="true" />
-            <element signature="e#6685#6686#0" expanded="true" />
+            <element signature="e#6662#6843#0" expanded="true" />
+            <element signature="e#6842#6843#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4305177">
+          <caret line="45" column="40" selection-start-line="45" selection-start-column="40" selection-end-line="45" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>
