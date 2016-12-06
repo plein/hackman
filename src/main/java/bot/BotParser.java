@@ -108,7 +108,7 @@ class BotParser {
 					break;
 				case "your_botid":
 					int myId = Integer.parseInt(value);
-					int opponentId = 2 - myId + 1;
+					int opponentId = 1 - myId;
 					this.currentState.getField().setMyId(myId);
 					this.currentState.getField().setOpponentId(opponentId);
 					break;

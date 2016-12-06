@@ -59,13 +59,13 @@ public class PathCalculator {
 
         // Am I closer than opponent some point?
         if (field.getOpponentPosition() != null) {
-            for (Path path : paths) {
+            for (Path path : paths){
                 Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance());
-                if (opponentPath == null) {
-                    bestPath = path;
-                    break;
+                if (opponentPath == null || opponentPath.getDistance() > path.getDistance()) {
+                    return path.getMoves().get(0);
                 }
             }
+            return paths.get(paths.size() - 1).getMoves().get(0);
         }
         return bestPath.getMoves().get(0);
     }
@@ -80,6 +80,17 @@ public class PathCalculator {
     }
 
     private static void calculateMinimumDistanceAux(Field field, Point start, Point actual, Point end, List<MoveType> moves, List<Path> solutions, Integer maxDistance, Integer[][] visited) {
+        if (field.getField()[actual.x][actual.y].contains(Field.BUG)) {
+            // Penalty
+            if (moves.size() > 2) {
+                moves.add(MoveType.PASS);
+                moves.add(MoveType.PASS);
+                moves.add(MoveType.PASS);
+            } else {
+                return;
+            }
+        }
+
         // Path found
         if (actual.equals(end)) {
             //System.out.println("Path found distance " + moves.size() + " moves: " + moves);
@@ -92,11 +103,6 @@ public class PathCalculator {
         if (visited[actual.x][actual.y] < moves.size()
                 || (maxDistance != null && maxDistance < moves.size())
                 || (bestPathDistance != -1 && bestPathDistance < moves.size())) {
-            return;
-        }
-
-        if (field.getField()[actual.x][actual.y].equals(Field.BUG)) {
-            // Penalty
             return;
         }
 
