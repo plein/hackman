@@ -22,9 +22,11 @@ public class PathCalculator {
         if (!iHaveWeapon && !field.getWeaponPositions().isEmpty()) {
             for (Point point : field.getWeaponPositions()) {
                 Path path = calculateShortestPath(field, field.getMyPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
-                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
-                if (path.getDistance() < opponentPath.getDistance()) {
-                    paths.add(path);
+                if (path != null) {
+                    Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
+                    if (opponentPath == null || path.getDistance() < opponentPath.getDistance()) {
+                        paths.add(path);
+                    }
                 }
             }
             for (Point point : field.getSnippetPositions()) {
