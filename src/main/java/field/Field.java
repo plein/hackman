@@ -225,6 +225,10 @@ public class Field {
         return height;
     }
 
+    public String getOpponentId() {
+        return opponentId;
+    }
+
     public void printField() {
         for (int i = 0; i < height; i++) {
             for (int j = 0; j < width; j++) {

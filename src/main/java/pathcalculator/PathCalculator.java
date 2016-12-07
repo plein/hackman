@@ -17,32 +17,32 @@ public class PathCalculator {
 
     private static Integer bestPathDistance;
 
-    public static Move bestNextMove(Field field, boolean hasWeapon) {
+    public static Move bestNextMove(Field field, boolean iHaveWeapon, boolean opponentWithWeapon) {
         List<Path> paths = new ArrayList<>();
-        if (!hasWeapon && !field.getWeaponPositions().isEmpty()) {
+        if (!iHaveWeapon && !field.getWeaponPositions().isEmpty()) {
             for (Point point : field.getWeaponPositions()) {
-                Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
-                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null);
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
+                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
                 if (path.getDistance() < opponentPath.getDistance()) {
                     paths.add(path);
                 }
             }
             for (Point point : field.getSnippetPositions()) {
                 Integer distance = (paths.isEmpty()) ? null : Configuration.MAX_DISTANCE_IF_SWORD.getValue();
-                Path path = calculateShortestPath(field, field.getMyPosition(), point, distance);
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, distance, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
                 if (path != null) {
                     paths.add(path);
                 }
             }
         } else {
             for (Point point : field.getSnippetPositions()) {
-                Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
                 if (path != null) {
                     paths.add(path);
                 }
             }
             for (Point point : field.getWeaponPositions()) {
-                Path path = calculateShortestPath(field, field.getMyPosition(), point, null);
+                Path path = calculateShortestPath(field, field.getMyPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
                 if (path != null) {
                     paths.add(path);
                 }
@@ -50,8 +50,8 @@ public class PathCalculator {
         }
 
         if (paths.isEmpty()) {
-            Path path1 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION, null);
-            Path path2 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION2, null);
+            Path path1 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
+            Path path2 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION2, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId());
             if (path1 != null && path2 != null) {
                 if (path1.getDistance() == 0) {
                     return new Move(path2.getMoves().get(0));
@@ -60,9 +60,9 @@ public class PathCalculator {
                 } else {
                     return (path1.getDistance() < path2.getDistance()) ? new Move(path1.getMoves().get(0)) : new Move(path2.getMoves().get(0));
                 }
-            } else if (path1 == null) {
+            } else if (path1 == null && path2 != null) {
                 return new Move(path2.getMoves().get(0));
-            } else if (path2 == null) {
+            } else if (path2 == null && path1 != null) {
                 return new Move(path1.getMoves().get(0));
             } else {
                 return new Move();
@@ -85,7 +85,7 @@ public class PathCalculator {
         if (field.getOpponentPosition() != null) {
             int longerDistance = 0;
             for (Path path : paths){
-                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance());
+                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance(), null, null, null);
                 if (opponentPath == null || opponentPath.getDistance() > path.getDistance()) {
                     return path.getMoves().get(0);
                 }
@@ -98,24 +98,40 @@ public class PathCalculator {
         return bestPath.getMoves().get(0);
     }
 
-    public static Path calculateShortestPath(Field field, Point start, Point end, Integer maxDistance) {
+    public static Path calculateShortestPath(Field field, Point start, Point end, Integer maxDistance, Boolean iHaveWeapon, Boolean opponentWithWeapon, String opponentId) {
         bestPathDistance = -1;
         Integer[][] visited = initMatrix(field.getWidth(), field.getHeight());
         List<Path> solutions = new ArrayList<>();
-        calculateMinimumDistanceAux(field, start, start, end, new ArrayList<MoveType>(), solutions, maxDistance, visited);
+        calculateMinimumDistanceAux(field, start, start, end, new ArrayList<MoveType>(), solutions, maxDistance, visited, iHaveWeapon, opponentWithWeapon, opponentId);
         //System.out.println(callsNumber);
         return getBestSolution(solutions);
     }
 
-    private static void calculateMinimumDistanceAux(Field field, Point start, Point actual, Point end, List<MoveType> moves, List<Path> solutions, Integer maxDistance, Integer[][] visited) {
+    private static void calculateMinimumDistanceAux(Field field, Point start, Point actual, Point end, List<MoveType> moves, List<Path> solutions, Integer maxDistance, Integer[][] visited, Boolean iHaveWeapon, Boolean opponentWithWeapon, String opponentId) {
+        //BUG
         if (field.getField()[actual.x][actual.y].contains(Field.BUG)) {
-            // Penalty
-            if (moves.size() > 2) {
-                moves.add(MoveType.PASS);
-                moves.add(MoveType.PASS);
-                moves.add(MoveType.PASS);
+            if (iHaveWeapon != null && iHaveWeapon) {
+                iHaveWeapon = false;
             } else {
-                return;
+                // Penalty
+                if (moves.size() > 2) {
+                    moves.add(MoveType.PASS);
+                    moves.add(MoveType.PASS);
+                    moves.add(MoveType.PASS);
+                } else {
+                    return;
+                }
+            }
+        }
+
+        // Enemy
+        if (opponentId != null && field.getField()[actual.x][actual.y].contains(opponentId)) {
+            if (opponentWithWeapon != null && opponentWithWeapon) {
+                if (iHaveWeapon != null && iHaveWeapon) {
+                    iHaveWeapon = false;
+                } else {
+                    return;
+                }
             }
         }
 
@@ -142,7 +158,7 @@ public class PathCalculator {
             if (canGoInDirection(field, actual, move)) {
                 List<MoveType> newMoves = new ArrayList<>(moves);
                 newMoves.add(move);
-                calculateMinimumDistanceAux(field, start, move(actual, move), end, newMoves, solutions, maxDistance, visited);
+                calculateMinimumDistanceAux(field, start, move(actual, move), end, newMoves, solutions, maxDistance, visited, iHaveWeapon, opponentWithWeapon, opponentId);
             }
         }
     }

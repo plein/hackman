@@ -39,6 +39,7 @@ public class BotState {
     private int roundNumber;
     private int timebank;
     private String myName;
+    private String opponentName;
     private HashMap<String, Player> players;
 
     private Field field;
@@ -62,6 +63,11 @@ public class BotState {
 
     public void setMyName(String myName) {
         this.myName = myName;
+        for (String name : players.keySet()) {
+            if (!name.equals(myName)) {
+                this.opponentName = name;
+            }
+        }
     }
 
     public void setMaxRounds(int value) {
@@ -102,5 +108,17 @@ public class BotState {
 
     public int getMaxRound() {
         return this.MAX_ROUNDS;
+    }
+
+    public String getOpponentName() {
+        return opponentName;
+    }
+
+    public Player getMyBot() {
+        return players.get(myName);
+    }
+
+    public Player getOpponentBot() {
+        return players.get(opponentName);
     }
 }
