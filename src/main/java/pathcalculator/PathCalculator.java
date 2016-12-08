@@ -17,7 +17,7 @@ public class PathCalculator {
 
     private static Integer bestPathDistance;
 
-    public static Move bestNextMove(Field field, boolean iHaveWeapon, boolean opponentWithWeapon) {
+    public static Move bestNextMove(Field field, boolean iHaveWeapon, boolean opponentWithWeapon, boolean imWining) {
         List<Path> paths = new ArrayList<>();
         if (!iHaveWeapon && !field.getWeaponPositions().isEmpty()) {
             for (Point point : field.getWeaponPositions()) {
@@ -30,7 +30,7 @@ public class PathCalculator {
                 }
             }
             for (Point point : field.getSnippetPositions()) {
-                Integer distance = (paths.isEmpty()) ? null : Configuration.MAX_DISTANCE_IF_SWORD.getValue();
+                Integer distance = (paths.isEmpty() || !imWining) ? null : Configuration.MAX_DISTANCE_IF_SWORD.getValue();
                 Path path = calculateShortestPath(field, field.getMyPosition(), point, distance, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), true);
                 if (path != null) {
                     paths.add(path);
@@ -147,11 +147,10 @@ public class PathCalculator {
 
         for (MoveType move : bestDirections) {
             if (canGoInDirection(field, actual, move)) {
+                // First move
                 if (myMove && moves.isEmpty()) {
                     if (isDangerous(field, move(actual, move), opponentWithWeapon, opponentId)) {
-                        if (iHaveWeapon) {
-                            iHaveWeapon = false;
-                        } else {
+                        if (!iHaveWeapon) {
                             continue;
                         }
                     }

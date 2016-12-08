@@ -51,7 +51,7 @@ public class BotStarter {
 
 		//if (validMoveTypes.size() <= 0) return new Move(); // No valid moves, pass
 
-		return PathCalculator.bestNextMove(state.getField(), state.getMyBot().hasWeapon(), state.getOpponentBot().hasWeapon());
+		return PathCalculator.bestNextMove(state.getField(), state.getMyBot().hasWeapon(), state.getOpponentBot().hasWeapon(), state.imWinning());
 		//MoveType randomMoveType = validMoveTypes.get(rand.nextInt(validMoveTypes.size()));
 
 		//return new Move(randomMoveType); // Return random but valid move

@@ -121,4 +121,8 @@ public class BotState {
     public Player getOpponentBot() {
         return players.get(opponentName);
     }
+
+    public boolean imWinning() {
+        return getMyBot().getSnippets() > getOpponentBot().getSnippets();
+    }
 }
