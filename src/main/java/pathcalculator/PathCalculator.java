@@ -81,20 +81,24 @@ public class PathCalculator {
             }
         });
 
-        Path bestPath = paths.get(0);
+        Map<Path, Integer> pathsImCloser = new HashMap<>();
+        for (Path path : paths) {
+            Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), null, null, null, null, false);
+            if (opponentPath != null && opponentPath.getDistance() >= path.getDistance()) {
+                pathsImCloser.put(path, opponentPath.getDistance() - path.getDistance());
+            }
+        }
 
-        // Am I closer than opponent some point?
-        if (field.getOpponentPosition() != null) {
-            int longerDistance = 0;
-            for (Path path : paths){
-                Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), path.getEnd(), path.getDistance(), null, null, null, false);
-                if (opponentPath == null || opponentPath.getDistance() > path.getDistance()) {
-                    return path.getMoves().get(0);
-                }
-                if (longerDistance < opponentPath.getDistance()) {
-                    bestPath = path;
-                    longerDistance = opponentPath.getDistance();
-                }
+        if (pathsImCloser.isEmpty()) {
+            return paths.get(0).getMoves().get(0);
+        }
+
+        Path bestPath = null;
+        Integer diff = null;
+        for (Map.Entry<Path, Integer>  entry : pathsImCloser.entrySet()) {
+            if (diff == null || entry.getValue() < diff) {
+                diff = entry.getValue();
+                bestPath = entry.getKey();
             }
         }
         return bestPath.getMoves().get(0);

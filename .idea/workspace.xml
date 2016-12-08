@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b22d5b3e-8688-478a-a109-66ef73efeab7" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bot/BotStarter.class" afterPath="$PROJECT_DIR$/target/classes/bot/BotStarter.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/bot/BotState.class" afterPath="$PROJECT_DIR$/target/classes/bot/BotState.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$2.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hackman-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/hackman-1.0-SNAPSHOT.jar" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bot/BotStarter.java" afterPath="$PROJECT_DIR$/src/main/java/bot/BotStarter.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/bot/BotState.java" afterPath="$PROJECT_DIR$/src/main/java/bot/BotState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-pathcalculator.PathCalculatorTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-pathcalculator.PathCalculatorTest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/pathcalculator.PathCalculatorTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/pathcalculator.PathCalculatorTest.txt" />
     </list>
     <ignored path="hackman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -40,8 +32,23 @@
       <file leaf-file-name="PathCalculator.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5625">
-              <caret line="149" column="29" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="29" />
+            <state vertical-scroll-proportion="0.35326087">
+              <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+              <folding>
+                <element signature="e#3631#3812#0" expanded="true" />
+                <element signature="e#3811#3812#0" expanded="true" />
+                <element signature="e#10114#10295#0" expanded="true" />
+                <element signature="e#10294#10295#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.java" pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -73,33 +80,8 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/move/Path.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="36" />
-              <folding>
-                <element signature="imports" expanded="false" />
-                <element signature="e#434#435#0" expanded="false" />
-                <element signature="e#462#463#0" expanded="false" />
-                <element signature="e#491#492#0" expanded="false" />
-                <element signature="e#517#518#0" expanded="false" />
-                <element signature="e#557#558#0" expanded="false" />
-                <element signature="e#585#586#0" expanded="false" />
-                <element signature="e#617#618#0" expanded="false" />
-                <element signature="e#652#653#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Configuration.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/configuration/Configuration.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-              <folding>
-                <element signature="e#186#187#0" expanded="false" />
-                <element signature="e#220#221#0" expanded="false" />
-                <element signature="e#249#250#0" expanded="false" />
-                <element signature="e#277#278#0" expanded="false" />
-              </folding>
+              <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -1131,7 +1113,7 @@
       <workItem from="1480626561203" duration="29329000" />
       <workItem from="1481022105942" duration="34000" />
       <workItem from="1481022195056" duration="17864000" />
-      <workItem from="1481191699863" duration="5394000" />
+      <workItem from="1481191699863" duration="10563000" />
     </task>
     <servers />
   </component>
@@ -1168,10 +1150,10 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52621000" />
+    <option name="totallyTimeSpent" value="57790000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1243,12 +1225,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
-          <line>151</line>
+          <line>39</line>
           <properties />
-          <option name="timeStamp" value="52" />
+          <option name="timeStamp" value="55" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
+          <line>76</line>
+          <properties />
+          <option name="timeStamp" value="58" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="55" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1259,6 +1247,7 @@
       <configuration name="Application">
         <watch expression="isThereABugOrOpponentWithWeapon(field, actual, opponentId, opponentWithWeapon)" />
         <watch expression="field.getField()[actual.x][actual.y].contains(Field.BUG)" />
+        <watch expression="field.getMyValidMoveTypes().get(0)" />
       </configuration>
     </watches-manager>
   </component>
@@ -1271,7 +1260,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3631#3812#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#10114#10295#0" expanded="true" />
+            <element signature="e#10294#10295#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1289,17 +1283,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#434#435#0" expanded="false" />
-            <element signature="e#462#463#0" expanded="false" />
-            <element signature="e#491#492#0" expanded="false" />
-            <element signature="e#517#518#0" expanded="false" />
-            <element signature="e#557#558#0" expanded="false" />
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#617#618#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1358,7 +1342,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
-          <folding />
+          <folding>
+            <element signature="e#3631#3812#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#10114#10295#0" expanded="true" />
+            <element signature="e#10294#10295#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1366,17 +1355,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#434#435#0" expanded="false" />
-            <element signature="e#462#463#0" expanded="false" />
-            <element signature="e#491#492#0" expanded="false" />
-            <element signature="e#517#518#0" expanded="false" />
-            <element signature="e#557#558#0" expanded="false" />
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#617#618#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1443,7 +1422,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3631#3812#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#10114#10295#0" expanded="true" />
+            <element signature="e#10294#10295#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1488,7 +1472,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#3631#3812#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#10114#10295#0" expanded="true" />
+            <element signature="e#10294#10295#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1560,24 +1549,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/move/Path.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="false" />
-            <element signature="e#434#435#0" expanded="false" />
-            <element signature="e#462#463#0" expanded="false" />
-            <element signature="e#491#492#0" expanded="false" />
-            <element signature="e#517#518#0" expanded="false" />
-            <element signature="e#557#558#0" expanded="false" />
-            <element signature="e#585#586#0" expanded="false" />
-            <element signature="e#617#618#0" expanded="false" />
-            <element signature="e#652#653#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/player/Player.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1642,11 +1613,32 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/move/Path.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_25/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="359" column="25" selection-start-line="359" selection-start-column="25" selection-end-line="359" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5625">
-          <caret line="149" column="29" selection-start-line="149" selection-start-column="29" selection-end-line="149" selection-end-column="29" />
-          <folding />
+        <state vertical-scroll-proportion="0.35326087">
+          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+          <folding>
+            <element signature="e#3631#3812#0" expanded="true" />
+            <element signature="e#3811#3812#0" expanded="true" />
+            <element signature="e#10114#10295#0" expanded="true" />
+            <element signature="e#10294#10295#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
