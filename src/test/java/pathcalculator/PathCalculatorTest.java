@@ -63,7 +63,7 @@ public class PathCalculatorTest {
         moves2.add(MoveType.RIGHT);
         paths.add(new Path(start, end, moves2));
 
-        MoveType bestMove = PathCalculator.chooseBestMove(paths, field);
+        MoveType bestMove = PathCalculator.chooseBestMove(paths, field, false, false);
         Assert.assertSame(MoveType.UP, bestMove);
     }
 

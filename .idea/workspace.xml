@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b22d5b3e-8688-478a-a109-66ef73efeab7" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/botV17.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/botV18.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/botv21.zip" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/botv22.zip" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$1.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$1.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$2.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator$2.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator.class" afterPath="$PROJECT_DIR$/target/classes/pathcalculator/PathCalculator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/hackman-1.0-SNAPSHOT.jar" afterPath="$PROJECT_DIR$/target/hackman-1.0-SNAPSHOT.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/pathcalculator/PathCalculatorTest.class" afterPath="$PROJECT_DIR$/target/test-classes/pathcalculator/PathCalculatorTest.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" afterPath="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java" afterPath="$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-pathcalculator.PathCalculatorTest.xml" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-pathcalculator.PathCalculatorTest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/surefire-reports/pathcalculator.PathCalculatorTest.txt" afterPath="$PROJECT_DIR$/target/surefire-reports/pathcalculator.PathCalculatorTest.txt" />
     </list>
     <ignored path="hackman.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,16 +40,18 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PathCalculator.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PathCalculator.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35326087">
-              <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
               <folding>
-                <element signature="e#3631#3812#0" expanded="true" />
-                <element signature="e#3811#3812#0" expanded="true" />
-                <element signature="e#10114#10295#0" expanded="true" />
-                <element signature="e#10294#10295#0" expanded="true" />
+                <element signature="e#3826#4007#0" expanded="true" />
+                <element signature="e#4006#4007#0" expanded="true" />
+                <element signature="e#4794#4995#0" expanded="true" />
+                <element signature="e#4994#4995#0" expanded="true" />
+                <element signature="e#11328#11509#0" expanded="true" />
+                <element signature="e#11508#11509#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -54,11 +67,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PathCalculatorTest.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PathCalculatorTest.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+            <state vertical-scroll-proportion="0.9375">
+              <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -126,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotParser.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
+              <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -136,7 +149,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotStarter.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
+              <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -169,10 +182,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/java/field/Field.java" />
-        <option value="$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/bot/BotState.java" />
         <option value="$PROJECT_DIR$/src/main/java/bot/BotStarter.java" />
         <option value="$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java" />
+        <option value="$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java" />
       </list>
     </option>
   </component>
@@ -526,7 +539,7 @@
       <recent name="pathcalculator" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BotStarter">
+  <component name="RunManager" selected="JUnit.PathCalculatorTest.testChooseBestMove">
     <configuration default="false" name="PathCalculatorTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
         <pattern>
@@ -1092,10 +1105,10 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Application.BotStarter" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.PathCalculatorTest.testMinimumDistance" />
+        <item index="0" class="java.lang.String" itemvalue="JUnit.PathCalculatorTest.testChooseBestMove" />
+        <item index="1" class="java.lang.String" itemvalue="Application.BotStarter" />
         <item index="2" class="java.lang.String" itemvalue="JUnit.PathCalculatorTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.PathCalculatorTest.testChooseBestMove" />
+        <item index="3" class="java.lang.String" itemvalue="JUnit.PathCalculatorTest.testMinimumDistance" />
         <item index="4" class="java.lang.String" itemvalue="JUnit.PathCalculatorTest.testCanGoDirection" />
       </list>
     </recent_temporary>
@@ -1113,27 +1126,27 @@
       <workItem from="1480626561203" duration="29329000" />
       <workItem from="1481022105942" duration="34000" />
       <workItem from="1481022195056" duration="17864000" />
-      <workItem from="1481191699863" duration="10563000" />
+      <workItem from="1481191699863" duration="15702000" />
     </task>
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="PathCalculatorTest - 2016.12.06 at 12h 30m 04s.xml">
-      <configuration name="PathCalculatorTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PathCalculatorTest - 2016.12.06 at 12h 31m 22s.xml">
-      <configuration name="PathCalculatorTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="PathCalculatorTest - 2016.12.06 at 12h 33m 27s.xml">
-      <configuration name="PathCalculatorTest" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="PathCalculatorTest - 2016.12.06 at 19h 14m 17s.xml">
+      <configuration name="PathCalculatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PathCalculatorTest - 2016.12.08 at 17h 22m 23s.xml">
+      <configuration name="PathCalculatorTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PathCalculatorTest - 2016.12.08 at 17h 23m 03s.xml">
       <configuration name="PathCalculatorTest" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PathCalculatorTest_testChooseBestMove - 2016.12.06 at 13h 29m 34s.xml">
       <configuration name="PathCalculatorTest.testChooseBestMove" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PathCalculatorTest_testChooseBestMove - 2016.12.06 at 13h 30m 32s.xml">
+      <configuration name="PathCalculatorTest.testChooseBestMove" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="PathCalculatorTest_testChooseBestMove - 2016.12.08 at 21h 41m 45s.xml">
       <configuration name="PathCalculatorTest.testChooseBestMove" configurationId="JUnit" />
     </history-entry>
     <history-entry file="PathCalculatorTest_testMinimumDistance - 2016.12.08 at 12h 08m 50s.xml">
@@ -1150,7 +1163,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57790000" />
+    <option name="totallyTimeSpent" value="62929000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1158,7 +1171,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32733223" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32569557" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19062027" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1207,12 +1220,6 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
-          <line>54</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
           <line>31</line>
           <properties />
           <option name="timeStamp" value="48" />
@@ -1231,23 +1238,33 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
-          <line>76</line>
+          <line>82</line>
           <properties />
           <option name="timeStamp" value="58" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java</url>
+          <line>100</line>
+          <properties />
+          <option name="timeStamp" value="59" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="59" />
+      <option name="time" value="61" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="isThereABugOrOpponentWithWeapon(field, actual, opponentId, opponentWithWeapon)" />
         <watch expression="field.getField()[actual.x][actual.y].contains(Field.BUG)" />
-        <watch expression="isDangerous(field, move(actual, move), opponentWithWeapon, opponentId)" />
+        <watch expression="field.getMyValidMoveTypes().get(0)" />
+        <watch expression="path == pathDest" language="JAVA" custom="" />
+        <watch expression="path.getDistance() + newPath.getDistance()" />
       </configuration>
       <configuration name="Application">
         <watch expression="isThereABugOrOpponentWithWeapon(field, actual, opponentId, opponentWithWeapon)" />
         <watch expression="field.getField()[actual.x][actual.y].contains(Field.BUG)" />
         <watch expression="field.getMyValidMoveTypes().get(0)" />
+        <watch expression="path == pathDest" language="JAVA" custom="" />
+        <watch expression="path.getDistance() + newPath.getDistance()" />
       </configuration>
     </watches-manager>
   </component>
@@ -1261,10 +1278,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3631#3812#0" expanded="true" />
-            <element signature="e#3811#3812#0" expanded="true" />
-            <element signature="e#10114#10295#0" expanded="true" />
-            <element signature="e#10294#10295#0" expanded="true" />
+            <element signature="e#3826#4007#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4794#4995#0" expanded="true" />
+            <element signature="e#4994#4995#0" expanded="true" />
+            <element signature="e#11328#11509#0" expanded="true" />
+            <element signature="e#11508#11509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1343,10 +1362,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="19" column="30" selection-start-line="19" selection-start-column="30" selection-end-line="19" selection-end-column="30" />
           <folding>
-            <element signature="e#3631#3812#0" expanded="true" />
-            <element signature="e#3811#3812#0" expanded="true" />
-            <element signature="e#10114#10295#0" expanded="true" />
-            <element signature="e#10294#10295#0" expanded="true" />
+            <element signature="e#3826#4007#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4794#4995#0" expanded="true" />
+            <element signature="e#4994#4995#0" expanded="true" />
+            <element signature="e#11328#11509#0" expanded="true" />
+            <element signature="e#11508#11509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1423,10 +1444,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3631#3812#0" expanded="true" />
-            <element signature="e#3811#3812#0" expanded="true" />
-            <element signature="e#10114#10295#0" expanded="true" />
-            <element signature="e#10294#10295#0" expanded="true" />
+            <element signature="e#3826#4007#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4794#4995#0" expanded="true" />
+            <element signature="e#4994#4995#0" expanded="true" />
+            <element signature="e#11328#11509#0" expanded="true" />
+            <element signature="e#11508#11509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1473,10 +1496,12 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#3631#3812#0" expanded="true" />
-            <element signature="e#3811#3812#0" expanded="true" />
-            <element signature="e#10114#10295#0" expanded="true" />
-            <element signature="e#10294#10295#0" expanded="true" />
+            <element signature="e#3826#4007#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4794#4995#0" expanded="true" />
+            <element signature="e#4994#4995#0" expanded="true" />
+            <element signature="e#11328#11509#0" expanded="true" />
+            <element signature="e#11508#11509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1576,16 +1601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1594,22 +1609,6 @@
             <element signature="e#3130#3131#0" expanded="true" />
             <element signature="e#3210#3211#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="111" column="0" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotStarter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="33" selection-start-line="53" selection-start-column="33" selection-end-line="53" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1629,15 +1628,43 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotStarter.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="53" column="0" selection-start-line="53" selection-start-column="0" selection-end-line="53" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/bot/BotParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="0" selection-start-line="68" selection-start-column="0" selection-end-line="68" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/pathcalculator/PathCalculator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35326087">
-          <caret line="92" column="38" selection-start-line="92" selection-start-column="38" selection-end-line="92" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="0" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
           <folding>
-            <element signature="e#3631#3812#0" expanded="true" />
-            <element signature="e#3811#3812#0" expanded="true" />
-            <element signature="e#10114#10295#0" expanded="true" />
-            <element signature="e#10294#10295#0" expanded="true" />
+            <element signature="e#3826#4007#0" expanded="true" />
+            <element signature="e#4006#4007#0" expanded="true" />
+            <element signature="e#4794#4995#0" expanded="true" />
+            <element signature="e#4994#4995#0" expanded="true" />
+            <element signature="e#11328#11509#0" expanded="true" />
+            <element signature="e#11508#11509#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/pathcalculator/PathCalculatorTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.9375">
+          <caret line="66" column="37" selection-start-line="66" selection-start-column="37" selection-end-line="66" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
