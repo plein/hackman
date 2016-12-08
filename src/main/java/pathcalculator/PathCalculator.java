@@ -67,7 +67,7 @@ public class PathCalculator {
             } else if (path2 == null && path1 != null) {
                 return new Move(path1.getMoves().get(0));
             } else {
-                return new Move();
+                return new Move(field.getMyValidMoveTypes().get(0));
             }
         }
         return new Move(chooseBestMove(paths, field));
