@@ -145,15 +145,19 @@ public class Field {
      * player outside the field or inside a wall
      * @return A list of valid moves
      */
-    public ArrayList<MoveType> getValidMoveTypes() {
-        ArrayList<MoveType> validMoveTypes = new ArrayList<>();
-        int myX = this.myPosition.x;
-        int myY = this.myPosition.y;
+    public ArrayList<MoveType> getMyValidMoveTypes() {
+        return getValidMoveTypes(myPosition);
+    }
 
-        Point up = new Point(myX, myY - 1);
-        Point down = new Point(myX, myY + 1);
-        Point left = new Point(myX - 1, myY);
-        Point right = new Point(myX + 1, myY);
+    public ArrayList<MoveType> getValidMoveTypes(Point point) {
+        ArrayList<MoveType> validMoveTypes = new ArrayList<>();
+        int x = point.x;
+        int y = point.y;
+
+        Point up = new Point(x, y - 1);
+        Point down = new Point(x, y + 1);
+        Point left = new Point(x - 1, y);
+        Point right = new Point(x + 1, y);
 
         if (isPointValid(up)) validMoveTypes.add(MoveType.UP);
         if (isPointValid(down)) validMoveTypes.add(MoveType.DOWN);
@@ -173,8 +177,7 @@ public class Field {
         int y = p.y;
 
         return x >= 0 && x < this.width && y >= 0 && y < this.height &&
-                !this.field[x][y].equals("x") &&
-                !this.field[x][y].contains(BUG);
+                !this.field[x][y].equals("x");
     }
 
     public void setMyId(int id) {
@@ -223,6 +226,10 @@ public class Field {
 
     public int getHeight() {
         return height;
+    }
+
+    public String getOpponentId() {
+        return opponentId;
     }
 
     public void printField() {

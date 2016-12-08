@@ -47,11 +47,11 @@ public class BotStarter {
 	 * @return A Move object
 	 */
 	public Move doMove(BotState state) {
-		//ArrayList<MoveType> validMoveTypes = state.getField().getValidMoveTypes();
+		//ArrayList<MoveType> validMoveTypes = state.getField().getMyValidMoveTypes();
 
 		//if (validMoveTypes.size() <= 0) return new Move(); // No valid moves, pass
 
-		return PathCalculator.bestNextMove(state.getField(), state.getPlayers().get(state.getMyName()).hasWeapon());
+		return PathCalculator.bestNextMove(state.getField(), state.getMyBot().hasWeapon(), state.getOpponentBot().hasWeapon());
 		//MoveType randomMoveType = validMoveTypes.get(rand.nextInt(validMoveTypes.size()));
 
 		//return new Move(randomMoveType); // Return random but valid move

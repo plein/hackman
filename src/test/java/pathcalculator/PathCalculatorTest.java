@@ -30,21 +30,21 @@ public class PathCalculatorTest {
 
     @Test
     public void testMinimumDistance() throws Exception {
-        Path path = PathCalculator.calculateShortestPath(field, new Point(5, 0), new Point(17, 0), null);
+        Path path = PathCalculator.calculateShortestPath(field, new Point(5, 0), new Point(17, 0), null, null, null, field.getOpponentId(), true);
         int distance = path.getDistance();
         Assert.assertSame(12, distance);
     }
 
     @Test
     public void testMinimumDistance2() throws Exception {
-        Path path = PathCalculator.calculateShortestPath(field, new Point(0, 5), new Point(17, 3), null);
+        Path path = PathCalculator.calculateShortestPath(field, new Point(0, 5), new Point(17, 3), null, null, null, field.getOpponentId(), true);
         int distance = path.getDistance();
         Assert.assertSame(25, distance);
     }
 
     @Test
     public void testMinimumDistance3() throws Exception {
-        Path path = PathCalculator.calculateShortestPath(field, new Point(2, 8), new Point(17, 3), null);
+        Path path = PathCalculator.calculateShortestPath(field, new Point(2, 8), new Point(17, 3), null, null, null, field.getOpponentId(), true);
         int distance = path.getDistance();
         Assert.assertSame(22, distance);
     }
