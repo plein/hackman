@@ -23,14 +23,12 @@ public class PathCalculator {
             for (Point point : field.getWeaponPositions()) {
                 Path path = calculateShortestPath(field, field.getMyPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), true, false);
                 if (path != null) {
-                    Path opponentPath = calculateShortestPath(field, field.getOpponentPosition(), point, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), false, false);
-                    if (opponentPath == null || path.getDistance() < opponentPath.getDistance()) {
-                        paths.add(path);
-                    }
+                    paths.add(path);
                 }
             }
             for (Point point : field.getSnippetPositions()) {
-                Integer distance = (paths.isEmpty() || !imWining) ? null : Configuration.MAX_DISTANCE_IF_SWORD.getValue();
+                //Integer distance = (paths.isEmpty() || !imWining) ? null : Configuration.MAX_DISTANCE_IF_SWORD.getValue();
+                Integer distance = null;
                 Path path = calculateShortestPath(field, field.getMyPosition(), point, distance, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), true, false);
                 if (path != null) {
                     paths.add(path);
@@ -61,9 +59,9 @@ public class PathCalculator {
         Path path1 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), true, false);
         Path path2 = calculateShortestPath(field, field.getMyPosition(), Field.BEST_POSITION2, null, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), true, false);
         if (path1 != null && path2 != null) {
-            if (path1.getDistance() == 0) {
+            if (path1.getMoves().size() == 1 && path1.getMoves().get(0).equals(MoveType.PASS)) {
                 return path2.getMoves().get(0);
-            } else if (path2.getDistance() == 0) {
+            } else if (path2.getMoves().size() == 1 && path2.getMoves().get(0).equals(MoveType.PASS)) {
                 return path1.getMoves().get(0);
             } else {
                 return (path1.getDistance() < path2.getDistance())
@@ -94,12 +92,16 @@ public class PathCalculator {
             if (opponentPath == null || opponentPath.getDistance() >= path.getDistance()) {
                 pathsImCloser.add(path);
             } else {
-                pathsEnemyIsCloser.add(path);
+                pathsEnemyIsCloser.add(opponentPath);
             }
         }
 
         if (paths.size() == 1 && pathsImCloser.isEmpty()) {
-            return goToBestPosition(field, iHaveWeapon, opponentWithWeapon);
+            if (iHaveWeapon) {
+                return paths.get(0).getMoves().get(0);
+            } else {
+                return goToBestPosition(field, iHaveWeapon, opponentWithWeapon);
+            }
         }
 
         if (pathsImCloser.isEmpty()) {
@@ -110,7 +112,7 @@ public class PathCalculator {
                     return o2.getDistance() - o1.getDistance();
                 }
             });
-            return pathsEnemyIsCloser.get(0).getMoves().get(0);
+            return calculateShortestPath(field, field.getMyPosition(), pathsEnemyIsCloser.get(0).getEnd(), null, iHaveWeapon, opponentWithWeapon, field.getOpponentId(), true, false).getMoves().get(0);
         }
 
         // Priorize same direction
